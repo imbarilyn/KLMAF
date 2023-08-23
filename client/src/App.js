@@ -1,21 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState, useEffect } from 'react';
+import Login from "./Login";
+import Reg from "./Reg";
+import React, { useState }  from 'react'
+import Home from  "./Home";
+
 
 function App() {
+  const [currForm, setCurr] = useState("login")
+  function SwitchForms (formName) {
+    setCurr(formName);
+    
 
-  const [count, setCount] = useState(0);
-
-  useEffect(()=>{
-    fetch("/hello")
-    .then(res =>res.json())
-    .then(res =>setCount(res.count))
-  }, []);
-
+  }
   return (
     <div className="App">
-      <h1>Body count: {count}</h1>
-      
+      {/* {
+        currForm === "login"? <Login  currentForm = {SwitchForms}/>: <Reg currentForm = {SwitchForms}/>
+      }       */}
+      <Home />
     </div>
   );
 }

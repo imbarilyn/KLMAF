@@ -1,0 +1,46 @@
+.container-form{
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(79deg, #3277a8, #3283a8 48%, #053b75);
+    color: #fff;
+    
+}
+
+.container-form, .register-form, .login-form{
+    display: flex;
+    flex-direction: column;
+    min-width: 33.3%;
+    /* align-items: center; */
+}
+
+label {
+    text-align: left;
+    padding: 0.25rem 0;  
+}
+
+input {
+    height: 4rem;
+    border: none;
+    border-radius: 10px;
+    margin: 0.25rem 0;
+    /* width: 100%; */
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.submit-btn{
+    margin-top: 1rem;
+}
+
+.switch-form-btn{
+    background: none;
+    color: #fff;
+    text-decoration: underline;
+}
