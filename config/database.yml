@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: afkl_contract_production
   username: afkl_contract
   password: <%= ENV['AFKL_CONTRACT_DATABASE_PASSWORD'] %>
