@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.body_content {
+    height: 100%;
+}
+
 .navbar_container {
     width: 100%;
     background-image: linear-gradient(79deg, #3277a8, #3283a8);
@@ -10,6 +15,8 @@
     justify-content: space-between;
     align-items: center;
     list-style: none;
+    position: sticky;
+
 }
 
 .navbar_left {
@@ -32,7 +39,7 @@
     padding: 4px;
 }
 
-.navbar_right :hover{
+.navbar_right :hover {
     cursor: pointer;
     border: 1px #3277a8;
     background-color: #fff;
@@ -40,3 +47,22 @@
     border-radius: 4px;
     padding: 2px;
 }
+
+.hero_content {
+    margin-top: 2rem;
+
+
+}
+
+.footer_copyright {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    background-image: linear-gradient(79deg, #3277a8, #3283a8);
+    
+    
+}
+
