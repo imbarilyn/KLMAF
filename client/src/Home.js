@@ -1,16 +1,20 @@
 import React from 'react'
+import LocalAirportIcon from '@mui/icons-material/LocalAirport';
+
+import './Home.css'
 
 function Home() {
   return (
     <div style={{background: "./photos/background_klm.jpg"}}>
         <div className='navbar_container'>
             <nav className='navbar_left'>
-                <li>logo</li>
+                <li><LocalAirportIcon style={{fontSize:"2rem"}}/></li>
             </nav>
             <nav className='navbar_right'>
-                <li>Contracts</li>
-                <li>user</li>
-                <li>Log out</li>
+                <li><button>Contracts</button></li>
+                <li><button>User</button></li>
+                <li><button>Log out</button></li>
+               
             </nav>
         </div>
         <div>
