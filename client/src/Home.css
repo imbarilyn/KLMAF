@@ -2,11 +2,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.body_content {
+/* .body_content {
     height: 100%;
+} */
+@media only screen and (max-width: 650px) {
+    .body_content{
+      justify-content: center;
+      align-items: center;
+    }
 }
+
+/* @media only screen and (max-width:650px){
+    .hero_content{
+        background-position: fixed;;
+    }
+} */
 
 .navbar_container {
     width: 100%;
@@ -49,7 +62,7 @@
 }
 
 .hero_content {
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 
 
 }
@@ -61,8 +74,39 @@
     position: absolute;
     text-align: center;
     color: #fff;
-    background-image: linear-gradient(79deg, #3277a8, #3283a8);
+    background-image: linear-gradient(79deg, #3277a8, #3283a8);   
+}
+
+.hero_content_right {
+    padding-top: 5rem;
+    margin-left: 5rem;
+    right: 0;
+    color:#3283a8;
+}
+
+.hero_content_right h1{
+    font-weight: 900;
+    font-size: 35px;
+    height: 30px;
+}
+
+.hero_content_right p{
+    padding-top: 1rem;
+    font-size: 20px;
     
     
 }
 
+.expired_contracts{
+    background-color: #3283a8;
+    margin: 0.5rem 5.5rem;
+    color: #fff;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 8px;  
+    font-size: 1rem;  
+    font-weight: 100;
+}
