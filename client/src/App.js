@@ -2,6 +2,7 @@ import Login from "./Login";
 import Reg from "./Reg";
 import React, { useState }  from 'react'
 import Home from  "./Home";
+import {Routes, Route} from 'react-router-dom'
 
 
 function App() {
