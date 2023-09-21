@@ -2,6 +2,8 @@ import React from 'react'
 import LocalAirportIcon from '@mui/icons-material/LocalAirport';
 import background from './photos/aeroplane.jpg'
 import background2 from "./photos/background_klm.jpg"
+import { Link } from 'react-router-dom';
+
 
 import './Home.css'
 
@@ -13,7 +15,7 @@ function Home() {
                 <li><LocalAirportIcon style={{fontSize:"2rem"}}/></li>
             </nav>
             <nav className='navbar_right'>
-                <li><button>Contracts</button></li>
+                <li><Link to ="/contracts"><button>Contracts</button></Link></li>
                 <li><button>User</button></li>
                 <li><button>Log out</button></li>
             </nav>
