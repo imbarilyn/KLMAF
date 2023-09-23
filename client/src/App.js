@@ -4,6 +4,7 @@ import React, { useState }  from 'react'
 import Home from  "./Home";
 import {Routes, Route} from 'react-router-dom'
 import Contracts from './Contracts'
+import Create from './Create'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route exact path="/" element = {<Home />} />
         <Route exact path = "/contracts" element = {<Contracts />} />
+        <Route exact path="/create" element = {<Create />}/>
       </Routes>
     </div>
   );
