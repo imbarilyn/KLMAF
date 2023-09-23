@@ -1,4 +1,5 @@
 import React,  { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -23,7 +24,7 @@ function Contracts() {
         <h6>search <input type='search' style={{border:"1px solid black", height:"30px"}}/></h6>
       </div>
       <div className='add-contract'>
-        <button type="button" className="btn btn-success">Add+</button>
+        <Link to = "/create"><button type="button" className="btn btn-success">Add+</button></Link>
       </div>
       <div className='Contracts-display'>
             <table className="table table-striped table-hover mt-5">
