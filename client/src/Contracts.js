@@ -1,5 +1,6 @@
 import React,  { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './Contracts.css'
 
 
 
@@ -9,23 +10,27 @@ function Contracts() {
 
 
 
-  useEffect(()=>{
-    fetch('https://dummyjson.com/products')
-    .then(res => res.json())
-    .then(res =>{
-      setColumns(Object.keys(res.products[0]))
-      //console.log(Object.keys(res.products[1]))
-      setRecords(res.products)
-    })
-  }, [])
+  // useEffect(()=>{
+  //   fetch('https://dummyjson.com/products')
+  //   .then(res => res.json())
+  //   .then(res =>{
+  //     setColumns(Object.keys(res.products[0]))
+  //     //console.log(Object.keys(res.products[1]))
+  //     setRecords(res.products)
+  //   })
+  // }, [])
   return (
     <div className='main-content'>
-      <div className='search-tab'>
-        <h6>search <input type='search' style={{border:"1px solid black", height:"30px"}}/></h6>
+      <div className='contracts-top'>
+          <div className='search-tab'>
+            <h6>search <input type='search' style={{border:"1px solid black", height:"30px"}}/></h6>
+          </div>
+          <br></br>
+          <div className='add-contract'>
+            <Link to = "/create"><button type="button" className="btn btn-success">Add+</button></Link>
+          </div>
       </div>
-      <div className='add-contract'>
-        <Link to = "/create"><button type="button" className="btn btn-success">Add+</button></Link>
-      </div>
+
       <div className='Contracts-display'>
             <table className="table table-striped table-hover mt-5">
               <thead>
