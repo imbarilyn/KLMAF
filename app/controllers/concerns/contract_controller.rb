@@ -1,5 +1,5 @@
 class ContractController < ApplicationController
-    def index
-        render json: {"name": "Panari"}
+    def summary
+        "#{self.name}: $#{self.country}"
     end
 end
