@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Contract.delete_all
 Contract.create!([
     {name: "Panari", expirydate: "20 Sept 2009", country: "Kenya"},
     {name: "Lazizi", expirydate: "20 Sept 2027", country: "Kenya"},
