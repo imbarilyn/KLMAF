@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
 get "/contracts/:id", to: "contract#show"
 
+post "/contracts", to: "contract#create"
+
 end
