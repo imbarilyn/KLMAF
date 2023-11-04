@@ -1,5 +1,6 @@
 class ContractController < ApplicationController
-   
+    wrap_parameters format: []
+
     def index
         contracts = Contract.all
         render json: contracts, except: [:created_at, :updated_at], methods: [:summary]
@@ -12,6 +13,20 @@ class ContractController < ApplicationController
         else
             render json: {error: "Contract not found"}, status: 404
         end
+    end
+
+    def create
+        contract = Contract.create(contract_params)
+        if contract
+        render json: contract, except: [:created_at, :updated_at], status: 201
+        else
+            render json: {error: "Cound not create object"}, status: :unprocessable_entity
+        end
+    end
+
+    private     
+    def contract_params
+        params.permit(:name, :expirydate, :country)
     end
 
 
