@@ -1,37 +1,19 @@
-import React,  { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import './Contracts.css'
+import { RiSearchLine } from 'react-icons/ri';
 
 
-
-function Contracts() {
+function Contracts({contract}) {
   // const [columns, setColumns] = useState ([]);
-  const [records, setRecords] = useState([]);
+  // const [id, name, expirydate, country] =  passContracts 
+  
+  const {id, name, expirydate, country} = contract
+  // console.log({name})
+  
+  // console.log(passContracts)
 
-
-
-  useEffect(()=>{
-    fetch("/contracts")
-    .then(res => res.json())
-    .then(res => {
-      // setColumns(Object.keys(res.contracts[0]))
-      // console.log(Object.keys(res.products[1]))
-      setRecords(res)
-      console.log(res)
-    })
-  }, [])
   return (
     <div className='main-content'>
-      <div className='contracts-top'>
-          <div className='search-tab'>
-            <h6>search <input type='search' style={{border:"1px solid black", height:"30px"}}/></h6>
-          </div>
-          <br></br>
-          <div className='add-contract'>
-            <Link to = "/create"><button type="button" className="btn btn-success">Add+</button></Link>
-          </div>
-      </div>
-
       <div className='Contracts-display'>
             <table className="table table-striped table-hover mt-5">
               <thead>
@@ -42,18 +24,13 @@ function Contracts() {
                   <th>Country</th>                          
                 </tr>
               </thead>
-              <tbody>              
-                {
-                  records.map((r, j)=>{
-                    // console.log(r.title)
-                    return <tr key ={j}>
-                      <td>{r.id}</td>
-                      <td>{r.name}</td>
-                      <td>{r.expirydate}</td>
-                      <td>{r.country}</td>                      
-                    </tr>
-                  })
-                }                                      
+              <tbody> 
+                <tr>             
+                  <td>{id}</td>
+                  <td>{name}</td>
+                  <td>{expirydate}</td>
+                  <td>{country}</td> 
+                </tr>
                 
               </tbody>
             </table>
