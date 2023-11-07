@@ -5,6 +5,7 @@ import background2 from "./photos/background_klm.jpg"
 import { Link } from 'react-router-dom';
 
 
+
 import './Home.css'
 
 function Home() {
@@ -21,7 +22,7 @@ function Home() {
             </nav>
         </div>
 
-        <div className='hero_content' style={{ backgroundImage: `url(${background2})`,height:"90vh", backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+        <div className='hero_content' style={{backgroundImage: `url(${background2})`,height:"90vh", backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
             <div className='hero_content_right'>
                 <h1>Contract Management System</h1>
                 <p>See expired contracts</p>
