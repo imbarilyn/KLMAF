@@ -1,14 +1,16 @@
 import React, { useState}from 'react'
 import './Create.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import travel from './photos/createbg.png'
 
 export default function Create({addContract}) {
  const [formData, setFormData] = useState({
   name: "",
-  expirydate: "",
+  expirydate: Date,
   country: ""
  });
+
+ const navigate = useNavigate()
   // e.preventDefault();
   const submitHandler = (e)=>{    
     e.preventDefault();
@@ -17,30 +19,20 @@ export default function Create({addContract}) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(
-        {
-          formData({
-            name: "",
-            expirydate: "",
-            country: ""
-          })
-        }
-      )
+      body: JSON.stringify(formData)      
     })
-    .then(res => res.json())
-    .then(newrecord => addContract(addContract(newrecord)))
-  }
-
-  function handleChange(e){
-    setFormData({
-      ...formData,
-      [e.FormData.name]: formData.value,
-      [e.formData.expirydate]: formData.expirydate,
-      [e.FormData.country]: formData.country
-    })
-    
-  }
-
+    .then(resp => resp.json())
+    .then(data=> {
+      setFormData({
+      name: "",
+      expirydate: Date,
+      country: "",
+    });
+    addContract(data)
+    alert("Contract added successfully!");
+    navigate("/contracts");
+  })
+}
   // console.log(name) 
 
   return (
@@ -53,8 +45,8 @@ export default function Create({addContract}) {
                   className="form-control" 
                   id="exampleInputName" 
                   placeholder="Enter contract name" 
-                  value={formData.name}
-                  onChange={handleChange}
+                  
+                  onChange={(e)=>setFormData({...formData, name: e.target.value})}
             />
           </div>
           <div className="form-group">
@@ -63,8 +55,7 @@ export default function Create({addContract}) {
                   type="date"
                   className="form-control" 
                   id="exampleInputExpiryDate" 
-                  value = {formData.expirydate}
-                  onChange ={handleChange}
+                  onChange ={(e)=>setFormData({...formData, expirydate:e.target.expirydate})}
             />
           </div>
           <div className="form-group">
@@ -73,12 +64,11 @@ export default function Create({addContract}) {
                   type="country"
                   class="form-control" 
                   id="exampleInputCountry"
-                  value = {formData.country}
-                  onChange ={handleChange}
+                  onChange ={(e)=>setFormData({...formData, country:e.target.value})}
               />
-          </div>  <Link to ="/contractscontainer">       
+          </div>      
           <button type="submit" class="btn btn-primary" >Submit</button>
-          </Link>
+          
       </form>
 
     </div>
