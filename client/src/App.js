@@ -2,10 +2,11 @@ import Login from "./Login";
 import Reg from "./Reg";
 import React, { useState, useEffect}  from 'react'
 import Home from  "./Home";
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, Link} from 'react-router-dom'
 import Contracts from './Contracts'
 import Create from './Create'
-import ContractContainer from "./ContractContainer";
+import LocalAirportIcon from '@mui/icons-material/LocalAirport';
+import "./Home.css"
 
 
 function App() {
@@ -15,22 +16,16 @@ function App() {
   useEffect(()=>{
     fetch("/contracts")
     .then(res => res.json())
-    .then(res => {
-      // setColumns(Object.keys(res.contracts[0]))
-      // console.log(Object.keys(res.products[1]))
-      setRecords(res)
-      // console.log(res)
-      // passContracts()
-
-    })
+    .then(setRecords);
+    console.log(records)
   }, [])
   function SwitchForms (formName) {
     setCurr(formName);
   }
 
   function handleAddContract (newrecord){
-    const addContract = [...records, newrecord]
-    setRecords(addContract)
+    const add = {...records, newrecord}
+    setRecords(add)
     
   }
 
@@ -45,10 +40,20 @@ function App() {
       {/* {
         currForm === "login"? <Login  currentForm = {SwitchForms}/>: <Reg currentForm = {SwitchForms}/>
       }        */}
+      <div className='navbar_container'>
+            <nav className='navbar_left'>
+                <li><LocalAirportIcon style={{fontSize:"2rem"}}/></li>
+            </nav>
+            <nav className='navbar_right'>
+                <li><Link to ="/contracts"><button>Contracts</button></Link></li>
+                <li><button>User</button></li>
+                <li><button>Log out</button></li>
+            </nav>
+        </div>
       <Routes>
         <Route exact path="/" element = {<Home />} />
-        {/* <Route exact path="/contracts" element = {<Contracts/>} /> */}
-        <Route exact path = "/contractscontainer" element = {<ContractContainer passContracts={records}/>} />
+        <Route exact path="/contracts" element = {<Contracts passContracts={records}/>} />
+        {/* <Route exact path = "/contractscontainer" element = {<ContractContainer passContracts={records}/>} /> */}
         <Route exact path="/create" element = {<Create  addContract = {handleAddContract}/>}/>
       </Routes>
     </div>
