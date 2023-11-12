@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contracts.css'
-import { RiSearchLine } from 'react-icons/ri';
+// import { RiSearchLine } from 'react-icons/ri';
 
 
 function Contracts({contract}) {
