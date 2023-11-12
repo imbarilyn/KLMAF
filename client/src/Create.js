@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 // import travel from './photos/createbg.png'
 
 export default function Create({addContract}) {
+  
  const [formData, setFormData] = useState({
   name: "",
   expirydate: Date,
@@ -22,7 +23,7 @@ export default function Create({addContract}) {
       body: JSON.stringify(formData)      
     })
     .then(resp => resp.json())
-    .then(data=> {
+    .then(data=>  {
       setFormData({
       name: "",
       expirydate: Date,
