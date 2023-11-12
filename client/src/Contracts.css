@@ -1,7 +1,17 @@
-.search-tab {
+/* .search-tab {
    display: flex;
    flex-direction: row;
    right: 0;
-   width: 100%;
-   
+   width: 100%;   
 }
+
+
+
+.add-contract {
+   display: flex;
+}
+
+.btn btn-success {
+   align-items: end;
+} */
+
